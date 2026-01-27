@@ -1,0 +1,72 @@
+{
+  "editor.rulers": [120],
+  "cursor.composer.shouldAutoAcceptDiffs": true,
+  "files.exclude": {
+    "**/.git": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "node_modules": true,
+    "**/.docker/**": false,
+    "**/.cursor/**": false,
+    "**/.dockerignore": false,
+    "**/*.mdc": false,
+    ".vscode": false
+  },
+  "search.exclude": {
+    "**/.cursor/plans/**": true
+  },
+  "cursor.general.globalCursorIgnoreList": [
+    "**/.env",
+    "**/credentials.json",
+    "**/credentials.*.json",
+    "**/secret.json",
+    "**/secrets.json",
+    "**/*.key",
+    "**/*.pem",
+    "**/*.pfx",
+    "**/*.p12",
+    "**/*.crt",
+    "**/*.cer",
+    "**/id_rsa",
+    "**/id_dsa",
+    "**/.ssh/id_*"
+  ],
+  "workbench.editor.labelFormat": "medium",
+  "editor.stickyScroll.enabled": true,
+  "editor.stickyScroll.defaultModel": "outlineModel",
+  "editor.stickyScroll.scrollWithEditor": true,
+  "workbench.editor.autoLockGroups": {
+    "workbench.editor.markdownPlan": true
+  },
+  "window.title": "workspace-manager-extension",
+  "workbench.colorCustomizations": {
+    "statusBarItem.warningBackground": "#2df0f0",
+    "statusBarItem.warningForeground": "#000000",
+    "statusBarItem.warningHoverBackground": "#2df0f0",
+    "statusBarItem.warningHoverForeground": "#00000090",
+    "statusBarItem.remoteHoverBackground": "#47ffff",
+    "statusBarItem.remoteHoverForeground": "#00000090",
+    "statusBar.noFolderBackground": "#2df0f0",
+    "statusBar.noFolderForeground": "#000000",
+    "statusBar.noFolderBorder": "#2df0f0",
+    "statusBar.prominentBackground": "#2df0f0",
+    "statusBar.prominentForeground": "#000000",
+    "statusBar.prominentHoverBackground": "#2df0f0",
+    "statusBar.prominentHoverForeground": "#00000090",
+    "focusBorder": "#2df0f099",
+    "progressBar.background": "#2df0f0",
+    "textLink.foreground": "#6dffff",
+    "textLink.activeForeground": "#7affff",
+    "selection.background": "#20e3e3",
+    "list.highlightForeground": "#2df0f0",
+    "list.focusAndSelectionOutline": "#2df0f099",
+    "button.background": "#2df0f0",
+    "button.foreground": "#000000",
+    "button.hoverBackground": "#3afdfd",
+    "tab.activeBorderTop": "#3afdfd",
+    "pickerGroup.foreground": "#3afdfd",
+    "list.activeSelectionBackground": "#2df0f04d",
+    "panelTitle.activeBorder": "#3afdfd",
+    "activityBar.activeBorder": "#2df0f0"
+  }
+}

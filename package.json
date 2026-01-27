@@ -1,0 +1,108 @@
+{
+  "name": "workspace-manager",
+  "displayName": "Workspace Manager",
+  "description": "Bidirectional sync between workspace file and folder settings",
+  "version": "0.1.0",
+  "publisher": "your-publisher",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "workspaceContains:**/*.code-workspace"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "workspaceManager.syncForward",
+        "title": "Workspace Manager: Sync Settings to Folders"
+      },
+      {
+        "command": "workspaceManager.syncReverse",
+        "title": "Workspace Manager: Sync Folder Changes to Workspace"
+      },
+      {
+        "command": "workspaceManager.enableAutoSync",
+        "title": "Workspace Manager: Enable Auto-Sync"
+      },
+      {
+        "command": "workspaceManager.disableAutoSync",
+        "title": "Workspace Manager: Disable Auto-Sync"
+      }
+    ],
+    "configuration": {
+      "title": "Workspace Manager",
+      "properties": {
+        "workspaceManager.autoSync.enabled": {
+          "type": "boolean",
+          "default": false,
+          "scope": "window",
+          "description": "Enable automatic sync via file watchers (enable via command palette or status bar)"
+        },
+        "workspaceManager.sync.enabled": {
+          "type": "boolean",
+          "default": true,
+          "scope": "window",
+          "description": "Enable forward sync (root settings -> folder .vscode/settings.json)"
+        },
+        "workspaceManager.sync.rootSettings.exclude": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [],
+          "scope": "window",
+          "description": "Patterns to NOT inherit from root settings to subfolders (picomatch, use ! for negation). Folders can still explicitly add these settings."
+        },
+        "workspaceManager.sync.subFolderSettings.defaults": {
+          "type": "object",
+          "default": {},
+          "scope": "window",
+          "description": "Default settings applied to all non-root folders (folder-specific settings take precedence)"
+        },
+        "workspaceManager.reverseSync.enabled": {
+          "type": "boolean",
+          "default": true,
+          "scope": "resource",
+          "description": "Enable reverse sync (folder UI changes -> workspace file)"
+        },
+        "workspaceManager.reverseSync.folderSettings.exclude": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [],
+          "scope": "resource",
+          "description": "Patterns to exclude from reverse sync (picomatch, use ! for negation)"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "check-types": "tsc --noEmit",
+    "build": "node esbuild.js",
+    "watch": "node esbuild.js --watch",
+    "compile": "npm run check-types && npm run build",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "check": "npm run check-types && npm run format:check",
+    "vscode:prepublish": "npm run compile -- --production",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@types/picomatch": "^2.3.3",
+    "@types/vscode": "^1.85.0",
+    "@vscode/vsce": "^3.7.1",
+    "esbuild": "^0.20.0",
+    "prettier": "^3.2.0",
+    "typescript": "^5.3.0"
+  },
+  "dependencies": {
+    "jsonc-parser": "^3.3.1",
+    "picomatch": "^4.0.1"
+  }
+}
