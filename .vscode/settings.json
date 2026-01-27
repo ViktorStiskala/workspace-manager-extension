@@ -38,7 +38,6 @@
   "workbench.editor.autoLockGroups": {
     "workbench.editor.markdownPlan": true
   },
-  "window.title": "workspace-manager-extension",
   "workbench.colorCustomizations": {
     "statusBarItem.warningBackground": "#2df0f0",
     "statusBarItem.warningForeground": "#000000",
