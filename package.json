@@ -2,8 +2,12 @@
   "name": "workspace-manager",
   "displayName": "Workspace Manager",
   "description": "Bidirectional sync between workspace file and folder settings",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "publisher": "your-publisher",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ViktorStiskala/workspace-manager-extension.git"
+  },
   "engines": {
     "vscode": "^1.85.0"
   },
